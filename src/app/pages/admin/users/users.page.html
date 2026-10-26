@@ -1,0 +1,142 @@
+
+<ion-content class="admin-content">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">A</div>
+        <span>Control</span>
+      </div>
+
+      <div class="workspace">
+        <span class="workspace-icon">◈</span>
+        <div>
+          <strong>Workspace</strong>
+          <small>Administración</small>
+        </div>
+        <span class="workspace-arrow">⌄</span>
+      </div>
+
+      <span class="nav-label">GENERAL</span>
+
+      <nav class="navigation">
+        <a class="nav-item " href="../../admin/">
+          <span class="nav-icon">◫</span>
+          <span>Dashboard</span>
+        </a>
+
+        <a class="nav-item active" href="./users/">
+          <span class="nav-icon">♙</span>
+          <span>Usuarios</span>
+          <span class="active-indicator"></span>
+        </a>
+
+        <a class="nav-item" href="./analytics">
+          <span class="nav-icon">◉</span>
+          <span>Analítica</span>
+        </a>
+
+        <a class="nav-item" href="./activity">
+          <span class="nav-icon">↗</span>
+          <span>Actividad</span>
+        </a>
+      </nav>
+
+      <span class="nav-label management-label">GESTIÓN</span>
+
+      <nav class="navigation">
+        <a class="nav-item" routerLink="./settings">
+          <span class="nav-icon">⚙</span>
+          <span>Ajustes</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-icon">?</div>
+          <strong>¿Necesitas ayuda?</strong>
+          <p>Consulta la información de tu panel.</p>
+        </div>
+
+        <button class="logout-button" (click)="logout()">
+          <span>↪</span>
+          Cerrar sesión
+        </button>
+
+        <div class="sidebar-user">
+          <div class="avatar">A</div>
+          <div class="user-info">
+            <strong>Administrador</strong>
+            <small>Cuenta de gestión</small>
+          </div>
+          <span class="user-menu">···</span>
+        </div>
+      </div>
+    </aside>
+  <div class="page-shell">
+    <header class="page-header">
+      <div>
+        <span class="eyebrow">GESTIÓN</span>
+        <h1>Usuarios<span>.</span></h1>
+        <p>Consulta y administra los usuarios de la plataforma.</p>
+      </div>
+      <div class="count-chip">{{ users.length }} usuarios de ejemplo</div>
+    </header>
+
+    <section class="stats">
+      <article class="glass-card">
+        <span>Total de usuarios</span>
+        <strong>{{ users.length }}</strong>
+      </article>
+      <article class="glass-card">
+        <span>Usuarios activos</span>
+        <strong>{{ activeCount }}</strong>
+      </article>
+      <article class="glass-card">
+        <span>Usuarios inactivos</span>
+        <strong>{{ users.length - activeCount }}</strong>
+      </article>
+    </section>
+
+    <section class="glass-card user-panel">
+      <input
+        type="search"
+        placeholder="Buscar por nombre o email..."
+        [(ngModel)]="search"
+      />
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>USUARIO</th>
+              <th>EMAIL</th>
+              <th>ESTADO</th>
+              <th>PLAN</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (user of filteredUsers; track user.id) {
+              <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <span class="status" [class.inactive]="!user.active">
+                    {{ user.active ? 'Activo' : 'Inactivo' }}
+                  </span>
+                </td>
+                <td>{{ user.plan }}</td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="4">No se han encontrado usuarios.</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p class="disclaimer">
+        Datos ficticios para la previsualización. No representan usuarios reales.
+      </p>
+    </section>
+  </div>
+</ion-content>

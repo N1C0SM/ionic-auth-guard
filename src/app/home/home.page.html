@@ -1,20 +1,127 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-layout">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- IZQUIERDA: LOGIN -->
+    <section class="login-side">
+
+      <div class="brand">
+        <div class="brand-icon">A</div>
+        <span>Control</span>
+      </div>
+
+      <div class="login-wrapper">
+        <div class="login-heading">
+          <span class="eyebrow">ACCESO PRIVADO</span>
+          <h1>Iniciar sesión</h1>
+          <p>Introduce tus credenciales para continuar.</p>
+        </div>
+
+        <div class="login-card">
+
+          <label for="username">Usuario</label>
+          <ion-item class="input-field" lines="none">
+            <ion-input
+              id="username"
+              type="text"
+              [(ngModel)]="username"
+              placeholder="Tu usuario"
+              autocomplete="username">
+            </ion-input>
+          </ion-item>
+
+          <label for="password">Contraseña</label>
+          <ion-item class="input-field" lines="none">
+            <ion-input
+              id="password"
+              type="password"
+              [(ngModel)]="password"
+              placeholder="Tu contraseña"
+              autocomplete="current-password">
+            </ion-input>
+          </ion-item>
+
+          <ion-button
+            expand="block"
+            class="login-button"
+            (click)="handleLogin()">
+            Continuar
+            <span class="button-arrow">↗</span>
+          </ion-button>
+
+          @if (errorMessage) {
+            <p class="error-message">{{ errorMessage }}</p>
+          }
+
+          <p class="secure-note">
+            <span class="secure-dot"></span>
+            Área exclusiva para administradores
+          </p>
+        </div>
+      </div>
+
+      <div class="login-footer">
+        CONTROL <span>·</span> ADMINISTRATION
+      </div>
+
+    </section>
+
+    <!-- DERECHA: PRESENTACIÓN -->
+    <section class="hero-side">
+
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-dot"></span>
+          ADMINISTRACIÓN
+        </div>
+
+        <h2>
+          Todo bajo<br>
+          <span>control.</span>
+        </h2>
+
+        <p class="hero-description">
+          Tu espacio de gestión. Accede a tus datos,
+          supervisa la actividad y administra tu plataforma
+          desde un único lugar.
+        </p>
+
+        <div class="hero-visual">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+
+          <div class="visual-core">
+            <div class="core-letter">A</div>
+            <div class="core-line"></div>
+            <span>CONTROL CENTER</span>
+          </div>
+
+          <div class="floating-card floating-top">
+            <span class="floating-icon">↗</span>
+            <div>
+              <strong>Gestión centralizada</strong>
+              <small>Todo en un mismo lugar</small>
+            </div>
+          </div>
+
+          <div class="floating-card floating-bottom">
+            <span class="floating-status"></span>
+            <div>
+              <strong>Tu plataforma</strong>
+              <small>Un centro de control</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <span>DISEÑADO PARA EL CONTROL</span>
+          <span>01 — 01</span>
+        </div>
+      </div>
+
+    </section>
+
   </div>
 </ion-content>

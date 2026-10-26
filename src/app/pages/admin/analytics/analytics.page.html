@@ -1,0 +1,143 @@
+
+<ion-content class="admin-content">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">A</div>
+        <span>Control</span>
+      </div>
+
+      <div class="workspace">
+        <span class="workspace-icon">◈</span>
+        <div>
+          <strong>Workspace</strong>
+          <small>Administración</small>
+        </div>
+        <span class="workspace-arrow">⌄</span>
+      </div>
+
+      <span class="nav-label">GENERAL</span>
+
+      <nav class="navigation">
+        <a class="nav-item" href="../../admin/">
+          <span class="nav-icon">◫</span>
+          <span>Dashboard</span>
+        </a>
+
+        <a class="nav-item" href="./users/">
+          <span class="nav-icon">♙</span>
+          <span>Usuarios</span>
+        </a>
+
+        <a class="nav-item active" href="./analytics">
+          <span class="nav-icon">◉</span>
+          <span>Analítica</span>
+          <span class="active-indicator"></span>
+        </a>
+
+        <a class="nav-item" href="./activity">
+          <span class="nav-icon">↗</span>
+          <span>Actividad</span>
+        </a>
+      </nav>
+
+      <span class="nav-label management-label">GESTIÓN</span>
+
+      <nav class="navigation">
+        <a class="nav-item" routerLink="./settings">
+          <span class="nav-icon">⚙</span>
+          <span>Ajustes</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-icon">?</div>
+          <strong>¿Necesitas ayuda?</strong>
+          <p>Consulta la información de tu panel.</p>
+        </div>
+
+        <button class="logout-button" (click)="logout()">
+          <span>↪</span>
+          Cerrar sesión
+        </button>
+
+        <div class="sidebar-user">
+          <div class="avatar">A</div>
+          <div class="user-info">
+            <strong>Administrador</strong>
+            <small>Cuenta de gestión</small>
+          </div>
+          <span class="user-menu">···</span>
+        </div>
+      </div>
+    </aside>
+  <div class="page-shell">
+    <header class="page-header">
+      <div>
+        <span class="eyebrow">DATOS E INSIGHTS</span>
+        <h1>Analytics<span>.</span></h1>
+        <p>Una visión visual de la actividad de tu plataforma.</p>
+      </div>
+      <span class="count-chip">Modo demostración</span>
+    </header>
+
+    <section class="stats">
+      <article class="glass-card">
+        <span>Usuarios registrados</span>
+        <strong>128</strong>
+        <small>Dato de ejemplo</small>
+      </article>
+      <article class="glass-card">
+        <span>Sesiones diarias</span>
+        <strong>24</strong>
+        <small>Dato de ejemplo</small>
+      </article>
+      <article class="glass-card">
+        <span>Retención</span>
+        <strong>64%</strong>
+        <small>Porcentaje ficticio</small>
+      </article>
+    </section>
+
+    <section class="charts">
+      <article class="glass-card chart-card">
+        <span class="eyebrow">ADQUISICIÓN</span>
+        <h2>Origen del tráfico</h2>
+        <div class="donut traffic">
+          <div class="donut-hole">
+            <strong>100%</strong>
+            <span>Ejemplo</span>
+          </div>
+        </div>
+        <div class="legend">
+          <p><i class="purple"></i> Redes sociales <b>55%</b></p>
+          <p><i class="blue"></i> Directo <b>30%</b></p>
+          <p><i class="gray"></i> Otros <b>15%</b></p>
+        </div>
+      </article>
+
+      <article class="glass-card chart-card">
+        <span class="eyebrow">ENGAGEMENT</span>
+        <h2>Indicadores de uso</h2>
+        <div class="radial-list">
+          <div class="radial-row">
+            <div class="radial r1"><span>76%</span></div>
+            <div><strong>Participación</strong><small>Ejemplo</small></div>
+          </div>
+          <div class="radial-row">
+            <div class="radial r2"><span>64%</span></div>
+            <div><strong>Retención</strong><small>Ejemplo</small></div>
+          </div>
+          <div class="radial-row">
+            <div class="radial r3"><span>88%</span></div>
+            <div><strong>Finalización</strong><small>Ejemplo</small></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <p class="disclaimer">
+      Todas las métricas y distribuciones son ficticias. La analítica real requiere instrumentar eventos y conectarlos al backend.
+    </p>
+  </div>
+</ion-content>
